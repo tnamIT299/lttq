@@ -1,0 +1,17 @@
+D:\visualcode\BaiTap4\bin\Debug\BaiTap4.exe.config
+D:\visualcode\BaiTap4\bin\Debug\BaiTap4.exe
+D:\visualcode\BaiTap4\bin\Debug\BaiTap4.pdb
+D:\visualcode\BaiTap4\obj\Debug\BaiTap4.csproj.AssemblyReference.cache
+D:\visualcode\BaiTap4\obj\Debug\BaiTap4.Form1.resources
+D:\visualcode\BaiTap4\obj\Debug\BaiTap4.Properties.Resources.resources
+D:\visualcode\BaiTap4\obj\Debug\BaiTap4.csproj.GenerateResource.cache
+D:\visualcode\BaiTap4\obj\Debug\BaiTap4.csproj.CoreCompileInputs.cache
+D:\visualcode\BaiTap4\obj\Debug\BaiTap4.exe
+D:\visualcode\BaiTap4\obj\Debug\BaiTap4.pdb
+D:\visualcode\BaiTap4\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\visualcode\BaiTap4\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\visualcode\BaiTap4\obj\Debug\BaiTap4.csproj.CopyComplete
+D:\visualcode\BaiTap4\bin\Debug\EntityFramework.dll
+D:\visualcode\BaiTap4\bin\Debug\EntityFramework.SqlServer.dll
+D:\visualcode\BaiTap4\bin\Debug\EntityFramework.xml
+D:\visualcode\BaiTap4\bin\Debug\EntityFramework.SqlServer.xml

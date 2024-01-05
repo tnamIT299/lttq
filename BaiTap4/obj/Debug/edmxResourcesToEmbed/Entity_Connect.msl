@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BOPHIMModelStoreContainer" CdmEntityContainer="BOPHIMEntities1">
+    <EntitySetMapping Name="DINHDANGPHIMs">
+      <EntityTypeMapping TypeName="BOPHIMModel.DINHDANGPHIM">
+        <MappingFragment StoreEntitySet="DINHDANGPHIM">
+          <ScalarProperty Name="MADINHDANG" ColumnName="MADINHDANG" />
+          <ScalarProperty Name="TENDINHDANG" ColumnName="TENDINHDANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHIMs">
+      <EntityTypeMapping TypeName="BOPHIMModel.PHIM">
+        <MappingFragment StoreEntitySet="PHIM">
+          <ScalarProperty Name="MADON" ColumnName="MADON" />
+          <ScalarProperty Name="TENPHIM" ColumnName="TENPHIM" />
+          <ScalarProperty Name="QUOCGIA" ColumnName="QUOCGIA" />
+          <ScalarProperty Name="THELOAI" ColumnName="THELOAI" />
+          <ScalarProperty Name="NGAYCONGCHIEU" ColumnName="NGAYCONGCHIEU" />
+          <ScalarProperty Name="TUOIQUYDINH" ColumnName="TUOIQUYDINH" />
+          <ScalarProperty Name="MADINHDANG" ColumnName="MADINHDANG" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

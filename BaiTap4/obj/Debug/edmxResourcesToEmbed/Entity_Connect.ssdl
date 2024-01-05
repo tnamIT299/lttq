@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BOPHIMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DINHDANGPHIM">
+    <Key>
+      <PropertyRef Name="MADINHDANG" />
+    </Key>
+    <Property Name="MADINHDANG" Type="int" Nullable="false" />
+    <Property Name="TENDINHDANG" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PHIM">
+    <Key>
+      <PropertyRef Name="MADON" />
+    </Key>
+    <Property Name="MADON" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TENPHIM" Type="nvarchar" MaxLength="100" />
+    <Property Name="QUOCGIA" Type="nvarchar" MaxLength="50" />
+    <Property Name="THELOAI" Type="nvarchar" MaxLength="50" />
+    <Property Name="NGAYCONGCHIEU" Type="date" />
+    <Property Name="TUOIQUYDINH" Type="int" />
+    <Property Name="MADINHDANG" Type="int" />
+    <Property Name="GIA" Type="float" />
+  </EntityType>
+  <Association Name="FK__PHIM__MADINHDANG__3C69FB99">
+    <End Role="DINHDANGPHIM" Type="Self.DINHDANGPHIM" Multiplicity="0..1" />
+    <End Role="PHIM" Type="Self.PHIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DINHDANGPHIM">
+        <PropertyRef Name="MADINHDANG" />
+      </Principal>
+      <Dependent Role="PHIM">
+        <PropertyRef Name="MADINHDANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BOPHIMModelStoreContainer">
+    <EntitySet Name="DINHDANGPHIM" EntityType="Self.DINHDANGPHIM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHIM" EntityType="Self.PHIM" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__PHIM__MADINHDANG__3C69FB99" Association="Self.FK__PHIM__MADINHDANG__3C69FB99">
+      <End Role="DINHDANGPHIM" EntitySet="DINHDANGPHIM" />
+      <End Role="PHIM" EntitySet="PHIM" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

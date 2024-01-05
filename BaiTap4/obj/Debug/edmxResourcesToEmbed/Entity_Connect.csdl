@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BOPHIMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DINHDANGPHIM">
+    <Key>
+      <PropertyRef Name="MADINHDANG" />
+    </Key>
+    <Property Name="MADINHDANG" Type="Int32" Nullable="false" />
+    <Property Name="TENDINHDANG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PHIMs" Relationship="Self.FK__PHIM__MADINHDANG__3C69FB99" FromRole="DINHDANGPHIM" ToRole="PHIM" />
+  </EntityType>
+  <EntityType Name="PHIM">
+    <Key>
+      <PropertyRef Name="MADON" />
+    </Key>
+    <Property Name="MADON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TENPHIM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="QUOCGIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="THELOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYCONGCHIEU" Type="DateTime" Precision="0" />
+    <Property Name="TUOIQUYDINH" Type="Int32" />
+    <Property Name="MADINHDANG" Type="Int32" />
+    <Property Name="GIA" Type="Double" />
+    <NavigationProperty Name="DINHDANGPHIM" Relationship="Self.FK__PHIM__MADINHDANG__3C69FB99" FromRole="PHIM" ToRole="DINHDANGPHIM" />
+  </EntityType>
+  <Association Name="FK__PHIM__MADINHDANG__3C69FB99">
+    <End Role="DINHDANGPHIM" Type="Self.DINHDANGPHIM" Multiplicity="0..1" />
+    <End Role="PHIM" Type="Self.PHIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DINHDANGPHIM">
+        <PropertyRef Name="MADINHDANG" />
+      </Principal>
+      <Dependent Role="PHIM">
+        <PropertyRef Name="MADINHDANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BOPHIMEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DINHDANGPHIMs" EntityType="Self.DINHDANGPHIM" />
+    <EntitySet Name="PHIMs" EntityType="Self.PHIM" />
+    <AssociationSet Name="FK__PHIM__MADINHDANG__3C69FB99" Association="Self.FK__PHIM__MADINHDANG__3C69FB99">
+      <End Role="DINHDANGPHIM" EntitySet="DINHDANGPHIMs" />
+      <End Role="PHIM" EntitySet="PHIMs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BOPHIMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DINHDANGPHIM">
+          <Key>
+            <PropertyRef Name="MADINHDANG" />
+          </Key>
+          <Property Name="MADINHDANG" Type="int" Nullable="false" />
+          <Property Name="TENDINHDANG" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PHIM">
+          <Key>
+            <PropertyRef Name="MADON" />
+          </Key>
+          <Property Name="MADON" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TENPHIM" Type="nvarchar" MaxLength="100" />
+          <Property Name="QUOCGIA" Type="nvarchar" MaxLength="50" />
+          <Property Name="THELOAI" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYCONGCHIEU" Type="date" />
+          <Property Name="TUOIQUYDINH" Type="int" />
+          <Property Name="MADINHDANG" Type="int" />
+          <Property Name="GIA" Type="float" />
+        </EntityType>
+        <Association Name="FK__PHIM__MADINHDANG__3C69FB99">
+          <End Role="DINHDANGPHIM" Type="Self.DINHDANGPHIM" Multiplicity="0..1" />
+          <End Role="PHIM" Type="Self.PHIM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DINHDANGPHIM">
+              <PropertyRef Name="MADINHDANG" />
+            </Principal>
+            <Dependent Role="PHIM">
+              <PropertyRef Name="MADINHDANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BOPHIMModelStoreContainer">
+          <EntitySet Name="DINHDANGPHIM" EntityType="Self.DINHDANGPHIM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHIM" EntityType="Self.PHIM" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__PHIM__MADINHDANG__3C69FB99" Association="Self.FK__PHIM__MADINHDANG__3C69FB99">
+            <End Role="DINHDANGPHIM" EntitySet="DINHDANGPHIM" />
+            <End Role="PHIM" EntitySet="PHIM" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BOPHIMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DINHDANGPHIM">
+          <Key>
+            <PropertyRef Name="MADINHDANG" />
+          </Key>
+          <Property Name="MADINHDANG" Type="Int32" Nullable="false" />
+          <Property Name="TENDINHDANG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PHIMs" Relationship="Self.FK__PHIM__MADINHDANG__3C69FB99" FromRole="DINHDANGPHIM" ToRole="PHIM" />
+        </EntityType>
+        <EntityType Name="PHIM">
+          <Key>
+            <PropertyRef Name="MADON" />
+          </Key>
+          <Property Name="MADON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENPHIM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="QUOCGIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="THELOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYCONGCHIEU" Type="DateTime" Precision="0" />
+          <Property Name="TUOIQUYDINH" Type="Int32" />
+          <Property Name="MADINHDANG" Type="Int32" />
+          <Property Name="GIA" Type="Double" />
+          <NavigationProperty Name="DINHDANGPHIM" Relationship="Self.FK__PHIM__MADINHDANG__3C69FB99" FromRole="PHIM" ToRole="DINHDANGPHIM" />
+        </EntityType>
+        <Association Name="FK__PHIM__MADINHDANG__3C69FB99">
+          <End Role="DINHDANGPHIM" Type="Self.DINHDANGPHIM" Multiplicity="0..1" />
+          <End Role="PHIM" Type="Self.PHIM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DINHDANGPHIM">
+              <PropertyRef Name="MADINHDANG" />
+            </Principal>
+            <Dependent Role="PHIM">
+              <PropertyRef Name="MADINHDANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BOPHIMEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DINHDANGPHIMs" EntityType="Self.DINHDANGPHIM" />
+          <EntitySet Name="PHIMs" EntityType="Self.PHIM" />
+          <AssociationSet Name="FK__PHIM__MADINHDANG__3C69FB99" Association="Self.FK__PHIM__MADINHDANG__3C69FB99">
+            <End Role="DINHDANGPHIM" EntitySet="DINHDANGPHIMs" />
+            <End Role="PHIM" EntitySet="PHIMs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BOPHIMModelStoreContainer" CdmEntityContainer="BOPHIMEntities1">
+          <EntitySetMapping Name="DINHDANGPHIMs">
+            <EntityTypeMapping TypeName="BOPHIMModel.DINHDANGPHIM">
+              <MappingFragment StoreEntitySet="DINHDANGPHIM">
+                <ScalarProperty Name="MADINHDANG" ColumnName="MADINHDANG" />
+                <ScalarProperty Name="TENDINHDANG" ColumnName="TENDINHDANG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIMs">
+            <EntityTypeMapping TypeName="BOPHIMModel.PHIM">
+              <MappingFragment StoreEntitySet="PHIM">
+                <ScalarProperty Name="MADON" ColumnName="MADON" />
+                <ScalarProperty Name="TENPHIM" ColumnName="TENPHIM" />
+                <ScalarProperty Name="QUOCGIA" ColumnName="QUOCGIA" />
+                <ScalarProperty Name="THELOAI" ColumnName="THELOAI" />
+                <ScalarProperty Name="NGAYCONGCHIEU" ColumnName="NGAYCONGCHIEU" />
+                <ScalarProperty Name="TUOIQUYDINH" ColumnName="TUOIQUYDINH" />
+                <ScalarProperty Name="MADINHDANG" ColumnName="MADINHDANG" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
