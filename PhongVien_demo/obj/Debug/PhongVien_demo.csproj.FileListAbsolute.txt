@@ -1,0 +1,15 @@
+D:\visualcode\PhongVien_demo\bin\Debug\PhongVien_demo.exe.config
+D:\visualcode\PhongVien_demo\bin\Debug\PhongVien_demo.exe
+D:\visualcode\PhongVien_demo\bin\Debug\PhongVien_demo.pdb
+D:\visualcode\PhongVien_demo\obj\Debug\PhongVien_demo.csproj.AssemblyReference.cache
+D:\visualcode\PhongVien_demo\obj\Debug\PhongVien_demo.Form1.resources
+D:\visualcode\PhongVien_demo\obj\Debug\PhongVien_demo.Properties.Resources.resources
+D:\visualcode\PhongVien_demo\obj\Debug\PhongVien_demo.csproj.GenerateResource.cache
+D:\visualcode\PhongVien_demo\obj\Debug\PhongVien_demo.csproj.CoreCompileInputs.cache
+D:\visualcode\PhongVien_demo\obj\Debug\PhongVien_demo.exe
+D:\visualcode\PhongVien_demo\obj\Debug\PhongVien_demo.pdb
+D:\visualcode\PhongVien_demo\bin\Debug\EntityFramework.dll
+D:\visualcode\PhongVien_demo\bin\Debug\EntityFramework.SqlServer.dll
+D:\visualcode\PhongVien_demo\bin\Debug\EntityFramework.xml
+D:\visualcode\PhongVien_demo\bin\Debug\EntityFramework.SqlServer.xml
+D:\visualcode\PhongVien_demo\obj\Debug\PhongVien_demo.csproj.CopyComplete

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PHONGVIENModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LoaiPhongVien">
+    <Key>
+      <PropertyRef Name="MaLoaiPV" />
+    </Key>
+    <Property Name="MaLoaiPV" Type="int" Nullable="false" />
+    <Property Name="LoaiPV" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHONGVIEN">
+    <Key>
+      <PropertyRef Name="MaPV" />
+    </Key>
+    <Property Name="MaPV" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="250" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="20" />
+    <Property Name="DienThoai" Type="nchar" MaxLength="15" />
+    <Property Name="NgayVaoLam" Type="date" />
+    <Property Name="MaLoaiPV" Type="int" />
+    <Property Name="PhuCap" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="SoGioLamThem" Type="int" />
+    <Property Name="Luong" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="AvatarURL" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_PHONGVIEN_LoaiPhongVien">
+    <End Role="LoaiPhongVien" Type="Self.LoaiPhongVien" Multiplicity="0..1" />
+    <End Role="PHONGVIEN" Type="Self.PHONGVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiPhongVien">
+        <PropertyRef Name="MaLoaiPV" />
+      </Principal>
+      <Dependent Role="PHONGVIEN">
+        <PropertyRef Name="MaLoaiPV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PHONGVIENModelStoreContainer">
+    <EntitySet Name="LoaiPhongVien" EntityType="Self.LoaiPhongVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHONGVIEN" EntityType="Self.PHONGVIEN" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PHONGVIEN_LoaiPhongVien" Association="Self.FK_PHONGVIEN_LoaiPhongVien">
+      <End Role="LoaiPhongVien" EntitySet="LoaiPhongVien" />
+      <End Role="PHONGVIEN" EntitySet="PHONGVIEN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
