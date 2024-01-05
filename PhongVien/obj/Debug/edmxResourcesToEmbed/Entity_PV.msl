@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PHONGVIENModelStoreContainer" CdmEntityContainer="PHONGVIENEntities2">
+    <EntitySetMapping Name="LoaiPhongViens">
+      <EntityTypeMapping TypeName="PHONGVIENModel.LoaiPhongVien">
+        <MappingFragment StoreEntitySet="LoaiPhongVien">
+          <ScalarProperty Name="MaLoaiPV" ColumnName="MaLoaiPV" />
+          <ScalarProperty Name="LoaiPV" ColumnName="LoaiPV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHONGVIENs">
+      <EntityTypeMapping TypeName="PHONGVIENModel.PHONGVIEN">
+        <MappingFragment StoreEntitySet="PHONGVIEN">
+          <ScalarProperty Name="MaPV" ColumnName="MaPV" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
+          <ScalarProperty Name="MaLoaiPV" ColumnName="MaLoaiPV" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
