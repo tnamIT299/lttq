@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DichVu">
+    <Key>
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaDV" Type="Int32" Nullable="false" />
+    <Property Name="TenDV" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ThuCungs" Relationship="Self.FK_ThuCung_DichVu" FromRole="DichVu" ToRole="ThuCung" />
+  </EntityType>
+  <EntityType Name="ThuCung">
+    <Key>
+      <PropertyRef Name="MaDon" />
+    </Key>
+    <Property Name="MaDon" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenThuCung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ChungLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CanNang" Type="Int32" />
+    <Property Name="NgayNhan" Type="DateTime" Precision="0" />
+    <Property Name="TinhTrang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phi" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MaDV" Type="Int32" />
+    <Property Name="SoNgay" Type="Int32" />
+    <NavigationProperty Name="DichVu" Relationship="Self.FK_ThuCung_DichVu" FromRole="ThuCung" ToRole="DichVu" />
+  </EntityType>
+  <Association Name="FK_ThuCung_DichVu">
+    <End Role="DichVu" Type="Self.DichVu" Multiplicity="0..1" />
+    <End Role="ThuCung" Type="Self.ThuCung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DichVu">
+        <PropertyRef Name="MaDV" />
+      </Principal>
+      <Dependent Role="ThuCung">
+        <PropertyRef Name="MaDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DichVus" EntityType="Self.DichVu" />
+    <EntitySet Name="ThuCungs" EntityType="Self.ThuCung" />
+    <AssociationSet Name="FK_ThuCung_DichVu" Association="Self.FK_ThuCung_DichVu">
+      <End Role="DichVu" EntitySet="DichVus" />
+      <End Role="ThuCung" EntitySet="ThuCungs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

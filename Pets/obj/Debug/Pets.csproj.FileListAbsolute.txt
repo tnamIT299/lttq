@@ -1,0 +1,15 @@
+D:\visualcode\Pets\bin\Debug\Pets.exe.config
+D:\visualcode\Pets\bin\Debug\Pets.exe
+D:\visualcode\Pets\bin\Debug\Pets.pdb
+D:\visualcode\Pets\obj\Debug\Pets.csproj.AssemblyReference.cache
+D:\visualcode\Pets\obj\Debug\Pets.Form1.resources
+D:\visualcode\Pets\obj\Debug\Pets.Properties.Resources.resources
+D:\visualcode\Pets\obj\Debug\Pets.csproj.GenerateResource.cache
+D:\visualcode\Pets\obj\Debug\Pets.csproj.CoreCompileInputs.cache
+D:\visualcode\Pets\obj\Debug\Pets.exe
+D:\visualcode\Pets\obj\Debug\Pets.pdb
+D:\visualcode\Pets\bin\Debug\EntityFramework.dll
+D:\visualcode\Pets\bin\Debug\EntityFramework.SqlServer.dll
+D:\visualcode\Pets\bin\Debug\EntityFramework.xml
+D:\visualcode\Pets\bin\Debug\EntityFramework.SqlServer.xml
+D:\visualcode\Pets\obj\Debug\Pets.csproj.CopyComplete

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DichVu">
+    <Key>
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaDV" Type="int" Nullable="false" />
+    <Property Name="TenDV" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="ThuCung">
+    <Key>
+      <PropertyRef Name="MaDon" />
+    </Key>
+    <Property Name="MaDon" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenThuCung" Type="nvarchar" MaxLength="100" />
+    <Property Name="ChungLoai" Type="nvarchar" MaxLength="100" />
+    <Property Name="CanNang" Type="int" />
+    <Property Name="NgayNhan" Type="date" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phi" Type="money" />
+    <Property Name="MaDV" Type="int" />
+    <Property Name="SoNgay" Type="int" />
+  </EntityType>
+  <Association Name="FK_ThuCung_DichVu">
+    <End Role="DichVu" Type="Self.DichVu" Multiplicity="0..1" />
+    <End Role="ThuCung" Type="Self.ThuCung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DichVu">
+        <PropertyRef Name="MaDV" />
+      </Principal>
+      <Dependent Role="ThuCung">
+        <PropertyRef Name="MaDV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetModelStoreContainer">
+    <EntitySet Name="DichVu" EntityType="Self.DichVu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThuCung" EntityType="Self.ThuCung" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ThuCung_DichVu" Association="Self.FK_ThuCung_DichVu">
+      <End Role="DichVu" EntitySet="DichVu" />
+      <End Role="ThuCung" EntitySet="ThuCung" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
